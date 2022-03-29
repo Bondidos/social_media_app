@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "545497968160",
+    "project_id": "social-media-test-app-fd7cf",
+    "storage_bucket": "social-media-test-app-fd7cf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:545497968160:android:e5118f5bd8c826e6b7d645",
+        "android_client_info": {
+          "package_name": "com.bondidos.social_media_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "545497968160-0o404sr62ia2qkmkhb2e8br3t8toidd7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2jG96koAOfU0Dccrx_tbk7AwFdTnnDEA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "545497968160-0o404sr62ia2qkmkhb2e8br3t8toidd7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
