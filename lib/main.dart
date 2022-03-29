@@ -1,5 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:social_media_app/bloc/auth_cubit.dart';
+import 'package:social_media_app/pages/post_screen.dart';
 import 'package:social_media_app/pages/sign_in_screen.dart';
 
 import 'pages/sign_up_screen.dart';
@@ -16,13 +19,17 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      routes: {
-        SignInScreen.id : (ctx) => SignInScreen(),
-        SignUpScreen.id : (ctx) => SignUpScreen()
-      },
-      theme: ThemeData.dark(),
-      initialRoute: SignUpScreen.id,
+    return BlocProvider<AuthCubit>(
+      create: (ctx) =>  AuthCubit(),
+      child: MaterialApp(
+        routes: {
+          SignInScreen.id : (ctx) => const SignInScreen(),
+          SignUpScreen.id : (ctx) => const SignUpScreen(),
+          PostScreen.id : (ctx) => const PostScreen(),
+        },
+        theme: ThemeData.dark(),
+        initialRoute: SignUpScreen.id,
+      ),
     );
   }
 }

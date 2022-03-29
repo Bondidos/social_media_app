@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class PostScreen extends StatefulWidget {
   const PostScreen({Key? key}) : super(key: key);
+  static const String id = "posts_screen";
 
   @override
   State<PostScreen> createState() => _PostScreenState();
