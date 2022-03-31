@@ -7,6 +7,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:social_media_app/bloc/auth_cubit.dart';
 import 'package:social_media_app/pages/sign_in_screen.dart';
 
+import 'chat_screen.dart';
 import 'create_post_screen.dart';
 
 class PostScreen extends StatefulWidget {
@@ -65,35 +66,40 @@ class _PostScreenState extends State<PostScreen> {
             itemCount: snapshot.data?.docs.length ?? 0,
             itemBuilder: (context, index) {
               final doc = snapshot.data!.docs[index];
-              return Padding(
-                padding: const EdgeInsets.all(18.0),
-                child: Column(
-                  children: [
-                    Container(
-                      height: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          image: DecorationImage(
-                            image: NetworkImage(doc['imageUrl']),
-                            fit: BoxFit.cover
-                          ),
+              return GestureDetector(
+                onTap: (){
+                  Navigator.of(context).pushNamed(ShatScreen.id);
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(18.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            image: DecorationImage(
+                              image: NetworkImage(doc['imageUrl']),
+                              fit: BoxFit.cover
+                            ),
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    Text(
-                      doc["userName"],
-                      style: Theme.of(context).textTheme.headline6,
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    Text(
-                      doc["description"],
-                      style: Theme.of(context).textTheme.headline5,
-                    )
-                  ],
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        doc["userName"],
+                        style: Theme.of(context).textTheme.headline6,
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        doc["description"],
+                        style: Theme.of(context).textTheme.headline5,
+                      )
+                    ],
+                  ),
                 ),
               );
             },
